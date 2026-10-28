@@ -1,0 +1,10 @@
+{
+  "name": " 🌴(1151028第五版) Exam Question Analyst",
+  "description": "A specialized tool for teachers to analyze exam questions, identify distractors, determine error causes, and generate teaching strategies using AI.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>試題分析小幫手(優履工作室研發)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Varela Round"', 'sans-serif'],
+            },
+            colors: {
+              'anpan-red': '#EA5532',
+              'anpan-yellow': '#F6AD3C',
+              'anpan-brown': '#4A2C2A',
+              'anpan-cream': '#FFF8E1',
+              'baikin-purple': '#6A4C93',
+              'melon-green': '#88D498',
+              'sky-blue': '#89CFF0',
+            },
+            boxShadow: {
+              'cartoon': '4px 4px 0px 0px #4A2C2A',
+              'cartoon-sm': '2px 2px 0px 0px #4A2C2A',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Varela Round', sans-serif;
+        background-color: #89CFF0; /* Sky blue background */
+        background-image: radial-gradient(#ffffff 20%, transparent 20%), radial-gradient(#ffffff 20%, transparent 20%);
+        background-color: #A0D8EF;
+        background-position: 0 0, 50px 50px;
+        background-size: 100px 100px;
+        color: #4A2C2A; /* Dark brown text */
+      }
+      
+      /* Cartoon Card Base Style */
+      .cartoon-card {
+        background-color: white;
+        border: 3px solid #4A2C2A;
+        border-radius: 1.5rem;
+        box-shadow: 6px 6px 0px 0px rgba(74, 44, 42, 0.2);
+      }
+
+      @media print {
+        /* Basic Reset */
+        body {
+          background-color: white !important;
+          background-image: none !important;
+          color: #4A2C2A !important; /* Keep Anpan brown for consistency */
+        }
+
+        /* Force background colors to show */
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        /* Cartoon Card - KEEP THE BORDERS */
+        .cartoon-card {
+          box-shadow: none !important;
+          border: 3px solid #4A2C2A !important;
+          border-radius: 1.5rem !important;
+          break-inside: avoid;
+        }
+
+        /* Ensure full width */
+        #root, main { 
+          width: 100% !important; 
+          margin: 0 !important; 
+          padding: 0 !important;
+          max-width: none !important;
+        }
+        
+        /* Hide scrollbars/backgrounds if needed */
+        .min-h-screen { 
+          min-height: auto !important; 
+        }
+
+        /* Page breaks */
+        .break-inside-avoid {
+          page-break-inside: avoid;
+        }
+        
+        /* Hide UI elements */
+        button, .no-print {
+          display: none !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react-markdown": "https://esm.sh/react-markdown@9.0.1?bundle",
+    "remark-math": "https://esm.sh/remark-math@6.0.0?bundle",
+    "rehype-katex": "https://esm.sh/rehype-katex@7.0.0?bundle"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
