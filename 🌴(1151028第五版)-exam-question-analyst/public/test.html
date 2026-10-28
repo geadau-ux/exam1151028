@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  document.write("process: " + typeof process + "<br>");
+  if (typeof process !== 'undefined') {
+    document.write("process.env: " + typeof process.env + "<br>");
+    if (process.env) {
+      document.write("process.env.GEMINI_API_KEY: " + (process.env.GEMINI_API_KEY ? "exists" : "undefined") + "<br>");
+    }
+  }
+</script>
+</body>
+</html>
